@@ -26,7 +26,7 @@ YouTube Music is predominantly dark by default. This style provides a light, Goo
 
 ### Direct installation
 
-After the repository is published, the direct Stylus installation link will be:
+Open the UserCSS file below with Stylus to install the theme.
 
 `https://raw.githubusercontent.com/docrepath/youtube-music-google-light-dark-player/main/YouTubeMusic-Google-Light-Dark-Player.user.css`
 
