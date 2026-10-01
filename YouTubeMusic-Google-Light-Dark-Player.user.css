@@ -1,0 +1,864 @@
+/* ==UserStyle==
+@name           YouTube Music — Google Light + Dark Player
+@namespace      github.com/docrepath/youtube-music-google-light-dark-player
+@version        1.0.0
+@description    A Google-style light theme for YouTube Music with a dark bottom player.
+@author         Prasad H.
+@license        MIT
+@homepageURL    https://github.com/docrepath/youtube-music-google-light-dark-player
+@supportURL     https://github.com/docrepath/youtube-music-google-light-dark-player/issues
+@updateURL      https://raw.githubusercontent.com/docrepath/youtube-music-google-light-dark-player/main/YouTubeMusic-Google-Light-Dark-Player.user.css
+@preprocessor   default
+==/UserStyle== */
+
+@-moz-document domain("music.youtube.com") {
+/* =========================================================
+   YOUTUBE MUSIC — GOOGLE-STYLE LIGHT THEME
+   WITH DARK BOTTOM PLAYER
+   ========================================================= */
+
+/* =========================================================
+   1. COLOUR VARIABLES
+   ========================================================= */
+
+:root {
+    --ytm-light-bg: #ffffff;
+    --ytm-light-surface: #f8f9fa;
+    --ytm-light-surface-2: #f1f3f4;
+    --ytm-light-border: #dadce0;
+    --ytm-light-text: #202124;
+    --ytm-light-secondary: #5f6368;
+    --ytm-light-hover: #f1f3f4;
+    --ytm-light-selected: #e8eaed;
+    --ytm-light-red: #ff0000;
+
+    --ytm-player-bg: #212121;
+    --ytm-player-text: #ffffff;
+    --ytm-player-secondary: #aaaaaa;
+    --ytm-player-hover: #333333;
+    --ytm-player-border: #333333;
+    --ytm-player-progress-bg: #5f6368;
+    --ytm-player-progress: #ffffff;
+}
+
+
+/* =========================================================
+   2. GLOBAL PAGE
+   ========================================================= */
+
+html,
+body,
+ytmusic-app,
+ytmusic-app-layout,
+#background.ytmusic-app {
+    background: var(--ytm-light-bg) !important;
+    background-color: var(--ytm-light-bg) !important;
+    color: var(--ytm-light-text) !important;
+}
+
+#page-manager,
+ytmusic-browse-response,
+ytmusic-search-page,
+ytmusic-library-page,
+ytmusic-playlist-page,
+ytmusic-detail-header-renderer,
+ytmusic-data-bound-header-renderer {
+    background: var(--ytm-light-bg) !important;
+    background-color: var(--ytm-light-bg) !important;
+    color: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   3. GLOBAL TEXT
+   ========================================================= */
+
+yt-formatted-string,
+.title,
+.subtitle,
+.description,
+.text,
+.secondary-text {
+    color: var(--ytm-light-text) !important;
+}
+
+.subtitle,
+.secondary-text,
+.description {
+    color: var(--ytm-light-secondary) !important;
+}
+
+
+/* =========================================================
+   4. GLOBAL THEME VARIABLES
+   ========================================================= */
+
+html,
+body,
+ytmusic-app,
+ytmusic-app-layout,
+.style-scope.ytmusic-app {
+    --ytmusic-background: #ffffff !important;
+    --ytmusic-brand-background-solid: #ffffff !important;
+    --ytmusic-brand-background-primary: #ffffff !important;
+    --ytmusic-nav-bar: #ffffff !important;
+    --ytmusic-player-bar-background: #212121 !important;
+    --ytmusic-detail-header: #ffffff !important;
+    --ytmusic-search-background: #f8f9fa !important;
+    --yt-spec-base-background: #ffffff !important;
+    --yt-spec-raised-background: #ffffff !important;
+    --yt-spec-menu-background: #ffffff !important;
+    --paper-dialog-background-color: #ffffff !important;
+    --paper-listbox-background-color: #ffffff !important;
+    --yt-spec-text-primary: #202124 !important;
+    --yt-spec-text-secondary: #5f6368 !important;
+    --ytmusic-text-primary: #202124 !important;
+    --ytmusic-text-secondary: #5f6368 !important;
+    --paper-item-body-secondary-color: #5f6368 !important;
+}
+
+
+/* =========================================================
+   5. TOP NAVIGATION
+   ========================================================= */
+
+ytmusic-nav-bar,
+#nav-bar-background.ytmusic-app-layout,
+ytmusic-app-layout #nav-bar-background {
+    background: rgba(255,255,255,0.97) !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+    border-bottom: 1px solid var(--ytm-light-border) !important;
+}
+
+ytmusic-logo {
+    background: transparent !important;
+}
+
+ytmusic-nav-bar tp-yt-iron-icon,
+ytmusic-nav-bar yt-icon,
+ytmusic-nav-bar svg {
+    color: var(--ytm-light-text) !important;
+    fill: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   6. SEARCH BOX
+   ========================================================= */
+
+ytmusic-search-box,
+ytmusic-search-box .search-box,
+.search-box.ytmusic-search-box {
+    background: var(--ytm-light-surface) !important;
+    background-color: var(--ytm-light-surface) !important;
+    color: var(--ytm-light-text) !important;
+    border: 1px solid transparent !important;
+}
+
+ytmusic-search-box[opened],
+ytmusic-search-box[has-query] {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid var(--ytm-light-border) !important;
+    box-shadow: 0 1px 3px rgba(60,64,67,.18) !important;
+}
+
+ytmusic-search-box #input,
+ytmusic-search-box input {
+    background: transparent !important;
+    color: var(--ytm-light-text) !important;
+    caret-color: var(--ytm-light-text) !important;
+}
+
+ytmusic-search-box #input::placeholder,
+ytmusic-search-box input::placeholder {
+    color: var(--ytm-light-secondary) !important;
+}
+
+ytmusic-search-box yt-icon,
+ytmusic-search-box tp-yt-iron-icon {
+    color: var(--ytm-light-secondary) !important;
+    fill: var(--ytm-light-secondary) !important;
+}
+
+ytmusic-search-box #suggestions,
+ytmusic-search-suggestions-section,
+ytmusic-search-suggestion {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-search-suggestion:hover {
+    background: var(--ytm-light-hover) !important;
+}
+
+
+/* =========================================================
+   7. LEFT SIDEBAR
+   ========================================================= */
+
+#contentContainer.tp-yt-app-drawer,
+tp-yt-app-drawer #contentContainer,
+ytmusic-app-drawer,
+ytmusic-guide-section-renderer,
+ytmusic-guide-entry-renderer {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+}
+
+tp-yt-paper-item.ytmusic-guide-entry-renderer {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+    --ytmusic-guide-entry-background-color: #ffffff !important;
+}
+
+ytmusic-app-drawer tp-yt-paper-item,
+ytmusic-app-drawer yt-formatted-string,
+ytmusic-app-drawer .text,
+ytmusic-guide-entry-renderer yt-formatted-string,
+ytmusic-guide-entry-renderer .title,
+ytmusic-guide-entry-renderer .subtitle {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-guide-entry-renderer .subtitle,
+#contentContainer.tp-yt-app-drawer .secondary-text {
+    color: var(--ytm-light-secondary) !important;
+}
+
+ytmusic-app-drawer tp-yt-paper-item:hover,
+ytmusic-app-drawer .ytmusic-item:hover,
+tp-yt-paper-item.ytmusic-guide-entry-renderer:hover {
+    background: var(--ytm-light-hover) !important;
+    background-color: var(--ytm-light-hover) !important;
+}
+
+ytmusic-app-drawer tp-yt-paper-item[aria-selected="true"],
+ytmusic-app-drawer .iron-selected,
+ytmusic-guide-entry-renderer[active] tp-yt-paper-item.ytmusic-guide-entry-renderer {
+    background: var(--ytm-light-selected) !important;
+    background-color: var(--ytm-light-selected) !important;
+}
+
+ytmusic-guide-entry-renderer[active] yt-formatted-string {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-app-drawer yt-icon,
+ytmusic-app-drawer tp-yt-iron-icon,
+ytmusic-guide-entry-renderer yt-icon,
+ytmusic-guide-entry-renderer tp-yt-iron-icon,
+ytmusic-guide-entry-renderer iron-icon {
+    color: var(--ytm-light-text) !important;
+    fill: var(--ytm-light-text) !important;
+}
+
+ytmusic-guide-section-renderer {
+    border-color: var(--ytm-light-border) !important;
+}
+
+ytmusic-guide-section-renderer hr,
+ytmusic-guide-section-renderer .divider {
+    background-color: var(--ytm-light-border) !important;
+    border-color: var(--ytm-light-border) !important;
+}
+
+#contentContainer.tp-yt-app-drawer yt-formatted-string,
+#contentContainer.tp-yt-app-drawer a {
+    color: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   8. HOME / CONTENT
+   ========================================================= */
+
+ytmusic-carousel-shelf-renderer,
+ytmusic-shelf-renderer,
+ytmusic-item-section-renderer {
+    background: transparent !important;
+}
+
+ytmusic-carousel-shelf-renderer .title,
+ytmusic-shelf-renderer .title,
+ytmusic-item-section-renderer .title {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-shelf-renderer .more-button,
+ytmusic-carousel-shelf-renderer .more-button {
+    color: var(--ytm-light-secondary) !important;
+}
+
+
+/* =========================================================
+   9. ALBUM / PLAYLIST / SONG ITEMS
+   ========================================================= */
+
+ytmusic-two-row-item-renderer,
+ytmusic-responsive-list-item-renderer,
+ytmusic-list-item-renderer {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-two-row-item-renderer:hover,
+ytmusic-responsive-list-item-renderer:hover,
+ytmusic-list-item-renderer:hover {
+    background: var(--ytm-light-hover) !important;
+}
+
+ytmusic-two-row-item-renderer img,
+ytmusic-list-item-renderer img,
+ytmusic-responsive-list-item-renderer img,
+yt-img-shadow img,
+img,
+video,
+yt-img-shadow {
+    filter: none !important;
+}
+
+
+/* =========================================================
+   10. CHIPS / FILTER BUTTONS
+   ========================================================= */
+
+ytmusic-chip-cloud-chip-renderer,
+ytmusic-chip-cloud-chip-renderer a {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+    border: 1px solid var(--ytm-light-border) !important;
+}
+
+ytmusic-chip-cloud-chip-renderer:hover,
+ytmusic-queue-header-renderer ytmusic-chip-cloud-chip-renderer a:hover {
+    background: var(--ytm-light-hover) !important;
+}
+
+
+/* =========================================================
+   11. BUTTONS
+   ========================================================= */
+
+ytmusic-navigation-button-renderer button,
+yt-button-renderer button,
+ytmusic-toggle-button-renderer,
+ytmusic-menu-renderer button {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-navigation-button-renderer button:hover,
+yt-button-renderer button:hover {
+    background: var(--ytm-light-hover) !important;
+}
+
+
+/* =========================================================
+   12. MENUS / CONTEXT MENUS
+   ========================================================= */
+
+ytmusic-menu-popup-renderer,
+ytmusic-menu-popup-renderer #items,
+ytmusic-menu-item-renderer,
+tp-yt-paper-listbox,
+tp-yt-paper-menu {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-menu-item-renderer:hover,
+ytmusic-menu-navigation-item-renderer:hover,
+ytmusic-menu-service-item-renderer:hover {
+    background: var(--ytm-light-hover) !important;
+}
+
+ytmusic-menu-popup-renderer yt-formatted-string,
+ytmusic-menu-item-renderer yt-formatted-string {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-menu-popup-renderer yt-icon,
+ytmusic-menu-popup-renderer tp-yt-iron-icon {
+    color: var(--ytm-light-text) !important;
+    fill: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   13. ALBUM / ARTIST / PLAYLIST HEADER
+   ========================================================= */
+
+ytmusic-data-bound-header-renderer,
+ytmusic-detail-header-renderer {
+    background: var(--ytm-light-bg) !important;
+    background-color: var(--ytm-light-bg) !important;
+}
+
+ytmusic-data-bound-header-renderer .title,
+ytmusic-data-bound-header-renderer .description,
+ytmusic-detail-header-renderer .title,
+ytmusic-detail-header-renderer .description {
+    color: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   14. TABS
+   ========================================================= */
+
+ytmusic-tabs,
+tp-yt-paper-tabs {
+    background: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-tabs .tab,
+tp-yt-paper-tab {
+    color: var(--ytm-light-secondary) !important;
+}
+
+ytmusic-tabs .tab.selected,
+ytmusic-tabs .iron-selected,
+tp-yt-paper-tab.iron-selected {
+    color: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   15. HOME IMMERSIVE HEADER — LIGHT COSMETIC TUNING
+   ========================================================= */
+
+/* Keep the immersive Home artwork area light enough for the header text. */
+ytmusic-carousel-shelf-renderer .header-group .title,
+ytmusic-carousel-shelf-renderer .header-group .description,
+ytmusic-carousel-shelf-renderer .header-group yt-formatted-string {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-carousel-shelf-renderer .header-group .more-button,
+ytmusic-carousel-shelf-renderer .header-group ytmusic-button-renderer,
+ytmusic-carousel-shelf-renderer .header-group tp-yt-paper-icon-button {
+    color: var(--ytm-light-secondary) !important;
+}
+
+/* Google-style mood chips: remove the outer white tile and retain a single clean chip. */
+ytmusic-chip-cloud-chip-renderer {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+ytmusic-chip-cloud-chip-renderer a,
+ytmusic-chip-cloud-chip-renderer a[href] {
+    background: #f8f9fa !important;
+    background-color: #f8f9fa !important;
+    color: var(--ytm-light-text) !important;
+    border: 1px solid var(--ytm-light-border) !important;
+    border-radius: 18px !important;
+}
+
+ytmusic-chip-cloud-chip-renderer a:hover,
+ytmusic-chip-cloud-chip-renderer a[href]:hover {
+    background: var(--ytm-light-hover) !important;
+}
+
+/* =========================================================
+   15. DARK BOTTOM PLAYER — BACKGROUND
+   ========================================================= */
+
+/* Main player element */
+
+ytmusic-player-bar,
+ytmusic-player-bar.ytmusic-app,
+#layout > ytmusic-player-bar {
+    background: var(--ytm-player-bg) !important;
+    background-color: var(--ytm-player-bg) !important;
+    background-image: none !important;
+    color: var(--ytm-player-text) !important;
+    border-top: 1px solid var(--ytm-player-border) !important;
+    --ytmusic-player-bar-background: var(--ytm-player-bg) !important;
+    --ytmusic-background: var(--ytm-player-bg) !important;
+    --ytmusic-text-primary: var(--ytm-player-text) !important;
+    --ytmusic-text-secondary: var(--ytm-player-secondary) !important;
+    --yt-spec-text-primary: var(--ytm-player-text) !important;
+    --yt-spec-text-secondary: var(--ytm-player-secondary) !important;
+    --iron-icon-fill-color: var(--ytm-player-text) !important;
+    --paper-icon-button_-_color: var(--ytm-player-text) !important;
+}
+
+
+/* Player slot / outer layer */
+
+ytmusic-app-layout[player-visible_] > [slot="player-bar"],
+ytmusic-app-layout[player-visible_] #player-bar-background.ytmusic-app-layout,
+#player-bar-background.ytmusic-app-layout,
+player-bar-background {
+    background: var(--ytm-player-bg) !important;
+    background-color: var(--ytm-player-bg) !important;
+    background-image: none !important;
+    color: var(--ytm-player-text) !important;
+    opacity: 1 !important;
+}
+
+
+/* =========================================================
+   16. DARK PLAYER — TEXT
+   ========================================================= */
+
+ytmusic-player-bar .title,
+ytmusic-player-bar .byline,
+ytmusic-player-bar yt-formatted-string,
+ytmusic-player-bar .content-info-wrapper,
+ytmusic-player-bar .content-info-wrapper *,
+ytmusic-player-bar .middle-controls,
+ytmusic-player-bar .left-controls,
+ytmusic-player-bar .right-controls,
+ytmusic-player-bar .right-controls-buttons {
+    color: var(--ytm-player-text) !important;
+}
+
+ytmusic-player-bar .byline,
+ytmusic-player-bar .secondary-text {
+    color: var(--ytm-player-secondary) !important;
+}
+
+
+/* =========================================================
+   17. DARK PLAYER — ICONS
+   ========================================================= */
+
+ytmusic-player-bar yt-icon,
+ytmusic-player-bar tp-yt-iron-icon,
+ytmusic-player-bar iron-icon,
+ytmusic-player-bar svg {
+    color: var(--ytm-player-text) !important;
+    fill: var(--ytm-player-text) !important;
+    --iron-icon-fill-color: var(--ytm-player-text) !important;
+}
+
+ytmusic-player-bar paper-icon-button,
+ytmusic-player-bar tp-yt-paper-icon-button,
+ytmusic-player-bar button {
+    color: var(--ytm-player-text) !important;
+    --iron-icon-fill-color: var(--ytm-player-text) !important;
+    --paper-icon-button_-_color: var(--ytm-player-text) !important;
+}
+
+
+/* =========================================================
+   18. DARK PLAYER — LEFT / CENTRE / RIGHT CONTROLS
+   ========================================================= */
+
+.left-controls.ytmusic-player-bar,
+.middle-controls.ytmusic-player-bar,
+.right-controls-buttons.ytmusic-player-bar,
+ytmusic-player-expanding-menu.ytmusic-player-bar {
+    color: var(--ytm-player-text) !important;
+}
+
+.left-controls.ytmusic-player-bar paper-icon-button,
+.left-controls.ytmusic-player-bar tp-yt-paper-icon-button,
+.middle-controls.ytmusic-player-bar paper-icon-button,
+.middle-controls.ytmusic-player-bar tp-yt-paper-icon-button,
+.right-controls-buttons.ytmusic-player-bar paper-icon-button,
+.right-controls-buttons.ytmusic-player-bar tp-yt-paper-icon-button,
+ytmusic-player-expanding-menu.ytmusic-player-bar paper-icon-button {
+    color: var(--ytm-player-text) !important;
+    --iron-icon-fill-color: var(--ytm-player-text) !important;
+    --paper-icon-button_-_color: var(--ytm-player-text) !important;
+}
+
+
+/* =========================================================
+   19. DARK PLAYER — PLAY / PAUSE
+   ========================================================= */
+
+paper-icon-button#play-pause-button,
+tp-yt-paper-icon-button#play-pause-button {
+    color: var(--ytm-player-text) !important;
+    --iron-icon-fill-color: var(--ytm-player-text) !important;
+    --paper-icon-button_-_color: var(--ytm-player-text) !important;
+}
+
+paper-icon-button#play-pause-button yt-icon,
+paper-icon-button#play-pause-button tp-yt-iron-icon,
+tp-yt-paper-icon-button#play-pause-button yt-icon,
+tp-yt-paper-icon-button#play-pause-button tp-yt-iron-icon {
+    color: var(--ytm-player-text) !important;
+    fill: var(--ytm-player-text) !important;
+    --iron-icon-fill-color: var(--ytm-player-text) !important;
+}
+
+ytmusic-player-bar ytmusic-play-button-renderer .content-wrapper {
+    background: var(--ytm-player-hover) !important;
+}
+
+ytmusic-player-bar ytmusic-play-button-renderer .icon {
+    fill: var(--ytm-player-text) !important;
+    --iron-icon-fill-color: var(--ytm-player-text) !important;
+}
+
+
+/* =========================================================
+   20. DARK PLAYER — HOVER
+   ========================================================= */
+
+ytmusic-player-bar paper-icon-button:hover,
+ytmusic-player-bar tp-yt-paper-icon-button:hover {
+    background-color: var(--ytm-player-hover) !important;
+    --iron-icon-fill-color: var(--ytm-player-text) !important;
+}
+
+
+/* =========================================================
+   21. DARK PLAYER — PROGRESS BAR
+   ========================================================= */
+
+ytmusic-player-bar #progressContainer,
+#progressContainer.tp-yt-paper-progress {
+    background: var(--ytm-player-progress-bg) !important;
+}
+
+ytmusic-player-bar #secondaryProgress,
+#secondaryProgress.tp-yt-paper-progress {
+    background: #777777 !important;
+}
+
+ytmusic-player-bar #primaryProgress {
+    background: var(--ytm-player-progress) !important;
+}
+
+
+/* =========================================================
+   22. DARK PLAYER — VOLUME
+   ========================================================= */
+
+ytmusic-player-bar #volume-slider,
+ytmusic-player-bar .volume-slider,
+ytmusic-player-bar .expand-volume-slider {
+    background: transparent !important;
+    --paper-slider-container-color: #666666 !important;
+    --paper-slider-active-color: #ffffff !important;
+    --paper-slider-knob-color: #ffffff !important;
+}
+
+ytmusic-player-bar #right-controls yt-icon,
+ytmusic-player-bar #right-controls tp-yt-iron-icon {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    --iron-icon-fill-color: #ffffff !important;
+}
+
+ytmusic-player-bar #right-controls,
+ytmusic-player-bar .right-controls-buttons {
+    color: #ffffff !important;
+}
+
+ytmusic-player-bar #right-controls paper-icon-button,
+ytmusic-player-bar #right-controls tp-yt-paper-icon-button {
+    color: #ffffff !important;
+    --iron-icon-fill-color: #ffffff !important;
+    --paper-icon-button_-_color: #ffffff !important;
+}
+
+
+/* =========================================================
+   23. PLAYER PAGE — KEEP LIGHT
+   ========================================================= */
+
+ytmusic-player-page,
+ytmusic-player-page .content,
+.content.style-scope.ytmusic-player-page {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   24. QUEUE
+   ========================================================= */
+
+ytmusic-player-queue-item {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+    border-bottom: 1px solid var(--ytm-light-border) !important;
+    border-color: var(--ytm-light-border) !important;
+}
+
+ytmusic-player-queue-item:hover {
+    background: var(--ytm-light-hover) !important;
+}
+
+ytmusic-player-queue-item yt-formatted-string,
+ytmusic-player-queue-item .title {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-player-queue-item .byline,
+ytmusic-player-queue-item .secondary-text {
+    color: var(--ytm-light-secondary) !important;
+}
+
+
+/* =========================================================
+   25. QUEUE TABS
+   ========================================================= */
+
+ytmusic-player-page tp-yt-paper-tab,
+ytmusic-player-page .tab {
+    color: var(--ytm-light-secondary) !important;
+}
+
+ytmusic-player-page tp-yt-paper-tab.iron-selected,
+ytmusic-player-page .tab.selected {
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-player-page #selectionBar {
+    background: var(--ytm-light-text) !important;
+    border-color: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   26. QUEUE FILTER CHIPS
+   ========================================================= */
+
+ytmusic-queue-header-renderer ytmusic-chip-cloud-chip-renderer a {
+    background: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+    border: 1px solid var(--ytm-light-border) !important;
+}
+
+
+/* =========================================================
+   27. SAVE BUTTON
+   ========================================================= */
+
+ytmusic-player-page yt-button-renderer button,
+ytmusic-player-page yt-button-shape button {
+    background: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+    border-color: var(--ytm-light-border) !important;
+}
+
+
+/* =========================================================
+   28. DIALOGS / POPUPS
+   ========================================================= */
+
+tp-yt-paper-dialog,
+ytmusic-popup-container,
+ytmusic-popup-container > *,
+yt-confirm-dialog-renderer {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+}
+
+tp-yt-paper-dialog yt-formatted-string,
+ytmusic-popup-container yt-formatted-string,
+yt-confirm-dialog-renderer yt-formatted-string {
+    color: var(--ytm-light-text) !important;
+}
+
+
+/* =========================================================
+   29. SETTINGS
+   ========================================================= */
+
+ytmusic-settings-page,
+ytmusic-setting-category-collection-renderer,
+ytmusic-setting-single-option-menu-renderer {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+}
+
+ytmusic-settings-page .category-menu {
+    background: var(--ytm-light-surface) !important;
+}
+
+ytmusic-settings-page .category-menu-item:hover {
+    background: var(--ytm-light-hover) !important;
+}
+
+ytmusic-settings-page .category-menu-item.iron-selected {
+    background: var(--ytm-light-selected) !important;
+}
+
+
+/* =========================================================
+   30. TOASTS / NOTIFICATIONS
+   ========================================================= */
+
+tp-yt-paper-toast,
+ytmusic-notification-text-renderer {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: var(--ytm-light-text) !important;
+    border: 1px solid var(--ytm-light-border) !important;
+    box-shadow: 0 2px 8px rgba(60,64,67,.18) !important;
+}
+
+
+/* =========================================================
+   31. SCROLLBARS
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dadce0 !important;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #bdc1c6 !important;
+}
+
+
+/* =========================================================
+   32. LINKS
+   ========================================================= */
+
+a {
+    color: inherit !important;
+}
+
+
+/* =========================================================
+   33. REMOVE UI GRADIENTS
+   ========================================================= */
+
+ytmusic-app-layout .background-gradient,
+ytmusic-browse-response .background-gradient {
+    background: linear-gradient(to bottom, #f1f3f4 0%, #ffffff 72%, #ffffff 100%) !important;
+}
+
+
+/* =========================================================
+   34. ARTWORK PROTECTION
+   ========================================================= */
+
+ytmusic-two-row-item-renderer img,
+ytmusic-list-item-renderer img,
+ytmusic-responsive-list-item-renderer img,
+yt-img-shadow img {
+    filter: none !important;
+}
+
+}
